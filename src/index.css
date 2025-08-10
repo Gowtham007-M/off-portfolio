@@ -1,0 +1,159 @@
+/* Root CSS Variables for Purple Theme */
+:root {
+  --primary-dark: #0a0a0a;
+  --secondary-dark: rgba(20, 20, 20, 0.95);
+  --tertiary-dark: #1a1a1a;
+  --accent-purple: #9333ea;
+  --accent-purple-light: #a855f7;
+  --accent-purple-lighter: #c084fc;
+  --accent-purple-pale: #e879f9;
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-faded: rgba(255, 255, 255, 0.45);
+  --border-color: rgba(147, 51, 234, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+/* Global Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-light);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #111111 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.display-1, .display-2, .display-3, .display-4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Link Styling */
+a {
+  color: var(--accent-purple-light);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: var(--accent-purple-pale);
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(147, 51, 234, 0.5);
+}
+
+/* Code Styling */
+code {
+  font-family: var(--font-mono);
+  background: rgba(147, 51, 234, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  color: var(--accent-purple-pale);
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Selection Styling */
+::selection {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8));
+  color: var(--text-white);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(168, 85, 247, 0.8));
+  color: var(--text-white);
+}
+
+/* Focus States for Accessibility */
+*:focus {
+  outline: 2px solid var(--accent-purple-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.2);
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Media Queries for Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
