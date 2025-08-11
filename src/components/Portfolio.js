@@ -1,344 +1,74 @@
+import './portfolio.css' ;
+
+
 const Portfolio = () => {
   return (
     <div className="bg-primary-dark text-light min-vh-100 glass-bg" style={{position: 'relative'}}>
-      {/* Enhanced Typography & Purple Theme CSS */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
-        
-        :root {
-          --purple-light: #e879f9;
-          --purple-medium: #a855f7;
-          --purple-dark: #9333ea;
-          --bg-color: #0a0a0a;
-          --bg-secondary: rgba(20, 20, 20, 0.95);
-        }
-
-        .bg-primary-dark { 
-          background-color: var(--bg-color);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .bg-secondary-dark { 
-          background: var(--bg-secondary);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(147, 51, 234, 0.1);
-        }
-
-        /* Futuristic Animated Background */
-        .glass-bg::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 30% 20%, rgba(147, 51, 234, 0.2) 0%, transparent 40%),
-            radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 40%),
-            radial-gradient(circle at 40% 80%, rgba(192, 132, 252, 0.1) 0%, transparent 40%);
-          background-size: 200% 200%;
-          animation: backgroundAnimate 20s ease infinite;
-          pointer-events: none;
-          z-index: 0;
-        }
-
-        @keyframes backgroundAnimate {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        
-        /* Typography System */
-        .typography-display {
-          font-family: 'Inter', sans-serif;
-          font-weight: 800;
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-          background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 50%, var(--purple-medium) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 0 0 10px rgba(147, 51, 234, 0.5), 0 0 20px rgba(147, 51, 234, 0.3);
-        }
-        
-        .typography-heading {
-          font-family: 'Inter', sans-serif;
-          font-weight: 700;
-          color: #ffffff;
-          letter-spacing: -0.01em;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .typography-subheading {
-          font-family: 'Inter', sans-serif;
-          font-weight: 600;
-          background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-medium) 50%, var(--purple-light) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          letter-spacing: -0.005em;
-        }
-        
-        .typography-body {
-          font-family: 'Inter', sans-serif;
-          font-weight: 400;
-          color: rgba(255, 255, 255, 0.85);
-          line-height: 1.7;
-          letter-spacing: 0.01em;
-        }
-        
-        .typography-body-light {
-          color: rgba(255, 255, 255, 0.65);
-        }
-        
-        .typography-mono {
-          font-family: 'JetBrains Mono', monospace;
-          font-weight: 500;
-          letter-spacing: 0.02em;
-        }
-        
-        /* Enhanced Cards */
-        .card-glass {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(147, 51, 234, 0.2);
-          border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(147, 51, 234, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-glass:hover {
-          transform: translateY(-4px);
-          background: rgba(255, 255, 255, 0.08);
-          box-shadow: 
-            0 20px 60px rgba(147, 51, 234, 0.2), 
-            inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            0 0 40px rgba(147, 51, 234, 0.5); /* This is the new glow */
-          border-color: rgba(147, 51, 234, 0.4);
-        }
-        
-        /* Skill Badges */
-        .skill-badge {
-          background: rgba(147, 51, 234, 0.1);
-          color: #e879f9;
-          padding: 0.6rem 1.2rem;
-          border-radius: 24px;
-          margin: 0.3rem;
-          display: inline-block;
-          font-size: 0.875rem;
-          font-weight: 500;
-          border: 1px solid rgba(147, 51, 234, 0.3);
-          backdrop-filter: blur(10px);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          letter-spacing: 0.01em;
-        }
-        
-        .skill-badge:hover {
-          background: rgba(147, 51, 234, 0.2);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 16px rgba(147, 51, 234, 0.3);
-        }
-        
-        /* Section Titles */
-        .section-title {
-          font-family: 'Inter', sans-serif;
-          font-weight: 700;
-          font-size: clamp(1.75rem, 3vw, 2.5rem);
-          background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 30%, var(--purple-dark) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 3rem;
-          position: relative;
-          letter-spacing: -0.02em;
-        }
-        
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: -12px;
-          left: 0;
-          width: 80px;
-          height: 4px;
-          background: linear-gradient(90deg, var(--purple-dark) 0%, var(--purple-medium) 50%, transparent 100%);
-          border-radius: 2px;
-        }
-        
-        /* Profile Image */
-        /* Remove this block completely */
-        .profile-image-container {
-        width: 280px;
-        height: 280px;
-        background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
-        border: 3px solid;
-        border-image: linear-gradient(135deg, var(--purple-dark), var(--purple-medium), var(--purple-light)) 1;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(147, 51, 234, 0.8);
-        font-size: 1.1rem;
-        text-align: center;
-        margin: 0 auto;
-        position: relative;
-        overflow: hidden;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 20px 60px rgba(147, 51, 234, 0.2);
-        }
-
-        .profile-image-container::before {
-        content: '';
-        position: absolute;
-        inset: -2px;
-        background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium), var(--purple-light));
-        border-radius: 50%;
-        z-index: -1;
-        animation: rotate 8s linear infinite;
-        }
-
-        @keyframes rotate {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-        }
-        
-        /* Contact Icons */
-        .contact-icon {
-          color: var(--purple-dark);
-          margin-right: 0.75rem;
-          font-size: 1.1em;
-          opacity: 0.9;
-        }
-        
-        /* Timeline */
-        .timeline-item {
-          border-left: 2px solid rgba(147, 51, 234, 0.4);
-          padding-left: 1.75rem;
-          position: relative;
-          margin-bottom: 1.5rem;
-        }
-        
-        .timeline-item::before {
-          content: '';
-          position: absolute;
-          left: -7px;
-          top: 0.5rem;
-          width: 12px;
-          height: 12px;
-          background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
-          border-radius: 50%;
-          box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
-        }
-        
-        /* Buttons */
-        .btn-primary-custom {
-          background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-medium) 100%);
-          border: none;
-          color: #ffffff;
-          font-weight: 600;
-          padding: 0.75rem 1.5rem;
-          border-radius: 12px;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 4px 16px rgba(147, 51, 234, 0.3);
-        }
-        
-        .btn-primary-custom:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
-          background: linear-gradient(135deg, #7c3aed 0%, var(--purple-dark) 100%);
-        }
-        
-        /* Badges */
-        .badge-custom {
-          background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.3));
-          color: var(--purple-light);
-          border: 1px solid rgba(147, 51, 234, 0.4);
-          font-weight: 500;
-          padding: 0.5rem 1rem;
-          border-radius: 8px;
-          backdrop-filter: blur(10px);
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.2);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
-          border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(135deg, #7c3aed, var(--purple-dark));
-        }
-      `}</style>
 
       {/* Header Section */}
       <section className="py-5 bg-secondary-dark">
         <div className="container">
-          <div className="row align-items-center">
+          
+          {/* Top Row: Image + Name */}
+          <div className="row align-items-center mb-5">
+            
+            {/* Image */}
             <div className="col-lg-4 text-center mb-4 mb-lg-0">
               <img 
                 src="/image.png" 
                 alt="Profile" 
                 className="img-fluid"
                 style={{
-                    width: "280px",
-                    height: "280px",
-                    borderRadius: "50%",
-                    boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)", /* Purple glow */
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    cursor: "pointer",
-                    objectFit: "cover"
+                  width: "300px",
+                  height: "300px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  boxShadow: "0 10px 30px rgba(147, 51, 234, 0.4)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
                 }}
                 onMouseEnter={e => {
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                    e.currentTarget.style.boxShadow = '0 20px 60px rgba(147, 51, 234, 0.6)'; /* More intense purple glow on hover */
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(147, 51, 234, 0.6)';
                 }}
                 onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(147, 51, 234, 0.4)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(147, 51, 234, 0.4)';
                 }}
               />
             </div>
-            <div className="col-lg-8">
-              <h1 className="typography-display mb-4">Gowtham M</h1>
-              <h3 className="typography-subheading mb-4 fs-2">Machine Learning & AI Professional</h3>
-              <p className="typography-body lead mb-4">
-                Results-driven Machine Learning and AI professional with hands-on experience in computer vision and predictive analytics. Successfully developed predictive maintenance solutions that reduced equipment downtime significantly through advanced forecasting models.
-              </p>
-              <div className="row">
-                <div className="col-md-6">
-                  <p className="typography-body mb-3">
-                    <i className="fas fa-map-marker-alt contact-icon"></i>
-                    Chennai, Tamil Nadu
-                  </p>
-                  <p className="typography-body mb-3">
-                    <i className="fas fa-phone contact-icon"></i>
-                    +91 9003780307
-                  </p>
-                </div>
-                <div className="col-md-6">
-                  <p className="typography-body mb-3">
-                    <i className="fas fa-envelope contact-icon"></i>
-                    40eecgowtham@gmail.com
-                  </p>
-                  <p className="typography-body mb-3">
-                    <i className="fab fa-linkedin contact-icon"></i>
-                    gowtham-off
-                  </p>
-                </div>
-              </div>
+
+            {/* Name + Title */}
+            <div className="col-lg-8 text-center text-lg-start">
+              <h1 className="typography-display mb-3">Gowtham M</h1>
+              <h3 className="typography-subheading fs-2">Machine Learning & AI Professional</h3>
             </div>
           </div>
+
+          {/* About Me Full Width */}
+          <section className="about-section bg-secondary-dark glass-bg card-glass">
+            <h2 className="section-title">About Me</h2>
+            <p className="tagline typography-subheading">Code, circuits, and curiosity — building things that actually work.</p>
+            
+            <p className="typography-body">
+              I’m a third-year IT student passionate about turning ideas into working solutions — whether that means writing efficient code or bringing hardware projects to life.
+              I love the challenge of making things work, from debugging tricky Python scripts to diagnosing stubborn circuit issues.
+            </p>
+
+            <p className="typography-body">
+              What fuels me is that “aha” moment when a tough problem finally comes together. My interests span computer vision, IoT, and machine learning —
+              and I enjoy exploring how these technologies can blend to create something new and impactful.
+            </p>
+
+            <p className="typography-body">
+              Currently, I’m expanding my skills in data science and ML while working on practical, hands-on projects.
+              I’m endlessly curious, always learning, and eager to collaborate with people who share the same drive for building and problem-solving.
+            </p>
+          </section>
+
         </div>
       </section>
+
 
       {/* Education Section */}
       <section className="py-5">
@@ -450,7 +180,7 @@ const Portfolio = () => {
           <div className="card card-glass">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start mb-4">
-                <h4 className="typography-subheading">Joint Associate Head</h4>
+                <h4 className="typography-subheading">Associate Head</h4>
                 <span className="badge-custom typography-mono">2023 – Present</span>
               </div>
               <h5 className="typography-heading mb-4">TechSaavy Tech Club</h5>
