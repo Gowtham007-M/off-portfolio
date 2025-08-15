@@ -68,7 +68,7 @@ const Portfolio = () => {
   ];
 
   // CSS content from portfolio.css
-  const cssContent = `
+const cssContent = `
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
     :root {
@@ -94,6 +94,14 @@ const Portfolio = () => {
       font-family: 'Inter', sans-serif;
       background: var(--bg-color);
       overflow-x: hidden;
+    }
+
+    /* Remove focus outlines */
+    a:focus,
+    button:focus,
+    *:focus {
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     /* Enhanced Backgrounds */
@@ -790,16 +798,16 @@ const Portfolio = () => {
                   </div>
                   <h5 className="typography-heading mb-4">TVS Next</h5>
                   <div className="timeline-item">
-                    <p className="typography-body">Achieved 30% reduction in equipment downtime by developing predictive maintenance solutions using MCMC and RQA techniques</p>
+                    <p className="typography-body">Orchestrated paradigm-shifting predictive maintenance architectures through sophisticated Markov Chain Monte Carlo (MCMC) and Recurrence Quantification Analysis (RQA) methodologies, substantially mitigating equipment downtime</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body">Implemented vibration analysis system with Fast Fourier Transform (FFT) for real-time monitoring</p>
+                    <p className="typography-body">Pioneered cutting-edge vibration analysis ecosystems utilizing Fast Fourier Transform (FFT) algorithms for omnipresent asset health surveillance and preemptive anomaly detection</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body">Optimized production processes using Genetic Algorithms (GA), leading to 25% increase in operational efficiency</p>
+                    <p className="typography-body">Revolutionized manufacturing paradigms through ingenious Genetic Algorithm (GA) optimization strategies, catalyzing unprecedented operational excellence and throughput amplification</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body mb-0">Enhanced inventory management via Radial Basis Function (RBF) optimization, reducing costs by 15%</p>
+                    <p className="typography-body mb-0">Metamorphosed supply chain dynamics via sophisticated Radial Basis Function (RBF) neural network optimization, precipitating profound cost efficiencies and inventory rationalization</p>
                   </div>
                 </div>
               </div>
@@ -928,29 +936,47 @@ const Portfolio = () => {
                       <div className="d-flex flex-column align-items-center">
                         <i className="fas fa-envelope contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
                         <h6 className="typography-heading mb-1">Email</h6>
-                        <p className="typography-body-light small mb-0">gowtham.m@example.com</p>
+                        <p className="typography-body-light small mb-0">stildusman@gmail.com</p>  
                       </div>
                     </div>
                     <div className="col-md-4 mb-3">
                       <div className="d-flex flex-column align-items-center">
+                        <a 
+                          href="https://www.linkedin.com/in/gowtham-off" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                        >
                         <i className="fab fa-linkedin contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
                         <h6 className="typography-heading mb-1">LinkedIn</h6>
-                        <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-m</p>
+                        <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-off</p>
+                        </a>
                       </div>
                     </div>
                     <div className="col-md-4 mb-3">
                       <div className="d-flex flex-column align-items-center">
+                        <a 
+                          href="https://github.com/Gowtham007-M" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                        >
                         <i className="fab fa-github contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
                         <h6 className="typography-heading mb-1">GitHub</h6>
-                        <p className="typography-body-light small mb-0">github.com/gowtham-m</p>
+                        <p className="typography-body-light small mb-0">github.com/Gowtham007-M</p>
+                        </a>
                       </div>
                     </div>
                   </div>
                   <div className="d-flex gap-3 justify-content-center flex-wrap">
-                    <button className="btn btn-primary-custom">
+                    <a
+                      href="mailto:stildusman@gmail.com"
+                      className="btn btn-primary-custom"
+                      style={{ textDecoration: 'none', color: 'inherit' }}
+                    >
                       <i className="fas fa-envelope me-2"></i>
                       Send Email
-                    </button>
+                    </a>
                     <button className="btn btn-outline-light">
                       <i className="fas fa-download me-2"></i>
                       Download Resume
@@ -981,22 +1007,27 @@ const Portfolio = () => {
 
       {/* Back to Top Button */}
       <button
-        className="btn btn-primary-custom position-fixed"
+        className="btn position-fixed"
         style={{
           bottom: '2rem',
           right: '2rem',
-          width: '50px',
-          height: '50px',
+          width: '60px',
+          height: '60px',
           borderRadius: '50%',
-          zIndex: 1000,
+          zIndex: 1050,
           display: activeSection === 'home' ? 'none' : 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          background: 'linear-gradient(135deg, #9333ea 0%, #7c3aed 100%)',
+          border: 'none',
+          boxShadow: '0 8px 32px rgba(147, 51, 234, 0.4)',
+          transition: 'all 0.3s ease',
+          color: 'white'
         }}
         onClick={() => scrollToSection('home')}
         title="Back to top"
       >
-        <i className="fas fa-arrow-up"></i>
+        <i className="fas fa-arrow-up" style={{ fontSize: '20px' }}></i>
       </button>
     </div>
   );
