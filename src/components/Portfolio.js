@@ -695,19 +695,27 @@ const cssContent = `
           <div className="text-center">
             <h2 className="section-title">About Me</h2>
             <p className="typography-subheading mt-3 mb-5">
-              Code, circuits, and curiosity — building things that actually work.
+              Code, circuits, and curiosity — creating solutions that make an impact.
             </p>
           </div>
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <p className="typography-body mb-4">
-                I'm a third-year IT student passionate about turning ideas into working solutions — whether that means writing efficient code or bringing hardware projects to life. I love the challenge of making things work, from debugging tricky Python scripts to diagnosing stubborn circuit issues.
+                I’m Gowtham, a third-year IT student passionate about turning ideas into working solutions — 
+                whether that means crafting efficient Python code, building hardware systems, or merging both worlds. 
+                I thrive on the challenge of solving complex problems, from tracking down elusive bugs to 
+                figuring out why a circuit refuses to cooperate.
               </p>
               <p className="typography-body mb-4">
-                What fuels me is that "aha" moment when a tough problem finally comes together. My interests span computer vision, IoT, and machine learning — and I enjoy exploring how these technologies can blend to create something new and impactful.
+                What fuels me is that <em>“aha”</em> moment when a tough problem finally clicks into place. 
+                My interests span computer vision, IoT, and machine learning, and I’m fascinated by how 
+                these technologies can intersect to create innovative and impactful solutions.
               </p>
               <p className="typography-body">
-                Currently, I'm expanding my skills in data science and ML while working on practical, hands-on projects. I'm endlessly curious, always learning, and eager to collaborate with people who share the same drive for building and problem-solving.
+                I’m endlessly curious and driven — always exploring, always learning, and always ready 
+                to tackle the next challenge. For me, building isn’t just a skill, it’s a mindset, and I’m 
+                eager to connect with fellow innovators, problem-solvers, and mentors who share the same 
+                passion for making things work.
               </p>
             </div>
           </div>
