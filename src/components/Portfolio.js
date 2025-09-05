@@ -802,7 +802,7 @@ const cssContent = `
                 <div className="card-body p-4">
                   <div className="d-flex justify-content-between align-items-start mb-4 flex-wrap">
                     <h4 className="typography-subheading mb-2">Machine Learning & AI Intern</h4>
-                    <span className="badge-custom typography-mono">Apr 2025 – Sep 2025</span>
+                    <span className="badge-custom typography-mono">Current</span>
                   </div>
                   <h5 className="typography-heading mb-4">TVS Next</h5>
                   <div className="timeline-item">
