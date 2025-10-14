@@ -58,12 +58,6 @@ const Portfolio = () => {
       description: "Designed a comprehensive smart home solution integrating multiple IoT devices with a centralized control interface for seamless user experience.",
       tech: ["Arduino", "ESP32", "IoT", "Mobile App"],
       impact: "Smart home automation"
-    },
-    {
-      title: "Predictive Maintenance System",
-      description: "Implemented advanced predictive maintenance solutions using MCMC and RQA techniques, significantly reducing equipment downtime in industrial settings.",
-      tech: ["Python", "MCMC", "RQA", "FFT", "Data Analytics"],
-      impact: "Reduced downtime by 30%"
     }
   ];
 
@@ -772,12 +766,12 @@ const cssContent = `
               <div className="card card-glass h-100 fade-in">
                 <div className="card-body p-4">
                   <div className="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <h4 className="typography-subheading mb-2">Associate Head</h4>
+                    <h4 className="typography-subheading mb-2">Vice president</h4>
                     <span className="badge-custom typography-mono">2023 – Present</span>
                   </div>
                   <h5 className="typography-heading mb-4">TechSaavy Tech Club</h5>
                   <div className="timeline-item">
-                    <p className="typography-body">Led organization of 5+ hackathons, engaging 500+ participants and growing active student participation by 200%</p>
+                    <p className="typography-body">Led organized hackathons, engaging 500+ participants and growing active student participation by 200%</p>
                   </div>
                   <div className="timeline-item">
                     <p className="typography-body">Mentored 150+ junior students in coding, project management, and technical best practices</p>
