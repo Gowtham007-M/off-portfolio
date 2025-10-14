@@ -653,7 +653,7 @@ const cssContent = `
           <div className={`row align-items-center mb-5 ${isVisible ? 'fade-in' : ''}`}>
             <div className="col-lg-4 text-center mb-4 mb-lg-0">
               <img
-                src="/image.png"
+                src="/image.JPG"
                 alt="Gowtham M - Profile"
                 className="img-fluid profile-image"
               />
