@@ -804,18 +804,18 @@ const cssContent = `
                     <h4 className="typography-subheading mb-2">Machine Learning & AI Intern</h4>
                     <span className="badge-custom typography-mono">Current</span>
                   </div>
-                  <h5 className="typography-heading mb-4">TVS Next</h5>
+                    <h5 className="typography-heading mb-4">TVS Next</h5>
                   <div className="timeline-item">
-                    <p className="typography-body">Orchestrated paradigm-shifting predictive maintenance architectures through sophisticated Markov Chain Monte Carlo (MCMC) and Recurrence Quantification Analysis (RQA) methodologies, substantially mitigating equipment downtime</p>
+                    <p className="typography-body">Orchestrated paradigm-shifting predictive maintenance architectures through sophisticated statistical modeling and analysis methodologies, substantially mitigating equipment downtime</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body">Pioneered cutting-edge vibration analysis ecosystems utilizing Fast Fourier Transform (FFT) algorithms for omnipresent asset health surveillance and preemptive anomaly detection</p>
+                    <p className="typography-body">Pioneered cutting-edge vibration analysis ecosystems for omnipresent asset health surveillance and preemptive anomaly detection</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body">Revolutionized manufacturing paradigms through ingenious Genetic Algorithm (GA) optimization strategies, catalyzing unprecedented operational excellence and throughput amplification</p>
+                    <p className="typography-body">Revolutionized manufacturing paradigms through ingenious optimization strategies, catalyzing unprecedented operational excellence and throughput amplification</p>
                   </div>
                   <div className="timeline-item">
-                    <p className="typography-body mb-0">Metamorphosed supply chain dynamics via sophisticated Radial Basis Function (RBF) neural network optimization, precipitating profound cost efficiencies and inventory rationalization</p>
+                    <p className="typography-body mb-0">Metamorphosed supply chain dynamics via sophisticated neural network optimization, precipitating profound cost efficiencies and inventory rationalization</p>
                   </div>
                 </div>
               </div>
