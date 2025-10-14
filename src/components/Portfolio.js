@@ -756,9 +756,6 @@ const cssContent = `
                   <div className="timeline-item">
                     <p className="typography-body">Collaborated with faculty to develop cutting-edge technology projects in the R&D department</p>
                   </div>
-                  <div className="timeline-item">
-                    <p className="typography-body mb-0">Published research papers on IoT applications and machine learning optimization techniques</p>
-                  </div>
                 </div>
               </div>
             </div>
