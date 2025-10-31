@@ -660,7 +660,7 @@ const cssContent = `
             </div>
             <div className="col-lg-8 text-center text-lg-start">
               <h1 className="typography-display mb-4">Gowtham M</h1>
-              <h3 className="typography-subheading fs-2 mb-4">Machine Learning & AI Professional</h3>
+              <h3 className="typography-subheading fs-2 mb-4">Machine Learning Engineer & IoT Developer</h3>
               <p className="typography-body fs-5 mb-4">
                 Transforming ideas into intelligent solutions through code, circuits, and creativity.
               </p>
@@ -930,56 +930,60 @@ const cssContent = `
                     I'm always excited to discuss new opportunities, collaborate on interesting projects,
                     or simply chat about technology and innovation.
                   </p>
+
+                  {/* Contact Icons */}
                   <div className="row mb-4">
                     <div className="col-md-4 mb-3">
                       <div className="d-flex flex-column align-items-center">
                         <i className="fas fa-envelope contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
                         <h6 className="typography-heading mb-1">Email</h6>
-                        <p className="typography-body-light small mb-0">stildusman@gmail.com</p>  
+                        <p className="typography-body-light small mb-0">stildusman@gmail.com</p>
                       </div>
                     </div>
                     <div className="col-md-4 mb-3">
                       <div className="d-flex flex-column align-items-center">
-                        <a 
-                          href="https://www.linkedin.com/in/gowtham-off" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-                        >
-                        <i className="fab fa-linkedin contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
-                        <h6 className="typography-heading mb-1">LinkedIn</h6>
-                        <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-off</p>
+                        <a href="https://www.linkedin.com/in/gowtham-off" target="_blank" rel="noopener noreferrer"
+                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="fab fa-linkedin contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
+                          <h6 className="typography-heading mb-1">LinkedIn</h6>
+                          <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-off</p>
                         </a>
                       </div>
                     </div>
                     <div className="col-md-4 mb-3">
                       <div className="d-flex flex-column align-items-center">
-                        <a 
-                          href="https://github.com/Gowtham007-M" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-                        >
-                        <i className="fab fa-github contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
-                        <h6 className="typography-heading mb-1">GitHub</h6>
-                        <p className="typography-body-light small mb-0">github.com/Gowtham007-M</p>
+                        <a href="https://github.com/Gowtham007-M" target="_blank" rel="noopener noreferrer"
+                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="fab fa-github contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
+                          <h6 className="typography-heading mb-1">GitHub</h6>
+                          <p className="typography-body-light small mb-0">github.com/Gowtham007-M</p>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex gap-3 justify-content-center flex-wrap">
+
+                  {/* LINKEDIN BADGE – WILL APPEAR */}
+                  <div className="mt-5">
+                    <div
+                      className="badge-base LI-profile-badge"
+                      data-locale="en_US"
+                      data-size="large"
+                      data-theme="dark"
+                      data-type="HORIZONTAL"
+                      data-vanity="gowtham-off"
+                      data-version="v1"
+                    />
+                  </div>
+
+                  {/* Send Email Button */}
+                  <div className="d-flex justify-content-center mt-4">
                     <a
                       href="mailto:stildusman@gmail.com"
                       className="btn btn-primary-custom"
-                      style={{ textDecoration: 'none', color: 'inherit' }}
                     >
                       <i className="fas fa-envelope me-2"></i>
                       Send Email
                     </a>
-                    <button className="btn btn-outline-light">
-                      <i className="fas fa-download me-2"></i>
-                      Download Resume
-                    </button>
                   </div>
                 </div>
               </div>
@@ -1029,6 +1033,7 @@ const cssContent = `
         <i className="fas fa-arrow-up" style={{ fontSize: '20px' }}></i>
       </button>
     </div>
+    
   );
 };
 
