@@ -233,6 +233,20 @@ body {
     border-color: rgba(147, 51, 234, 0.6);
 }
 
+.linkedin-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;  /* Reserve space for badge */
+  margin-bottom: 2rem;
+}
+
+.LI-profile-badge {
+  margin: 0 auto !important;
+  display: block !important;
+  width: fit-content !important;
+}
+
 /* Enhanced Section Titles */
 .section-title {
     font-family: 'Inter', sans-serif;

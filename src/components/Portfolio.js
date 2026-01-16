@@ -7,7 +7,7 @@ const Portfolio = () => {
   useEffect(() => {
     setIsVisible(true);
 
-    // Intersection Observer for section highlighting
+    // 1. Intersection Observer for section highlighting
     const sections = document.querySelectorAll('section[id]');
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,11 +19,28 @@ const Portfolio = () => {
       },
       { threshold: 0.3 }
     );
-
     sections.forEach((section) => observer.observe(section));
+    
+    // 2. LinkedIn Badge Script Loader
+    // This script must be loaded after the badge HTML is mounted.
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
 
-    return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+    // 3. Combined Cleanup Function
+    return () => {
+      // Cleanup for Intersection Observer
+      sections.forEach((section) => observer.unobserve(section));
+
+      // Cleanup for LinkedIn Script
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []); // Run only once on component mount
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -297,6 +314,20 @@ const cssContent = `
     .skill-badge:hover::before {
       left: 100%;
     }
+    .linkedin-badge-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80px;  /* Reserve space for badge */
+      margin-bottom: 2rem;
+    }
+
+    .LI-profile-badge {
+      margin: 0 auto !important;
+      display: block !important;
+      width: fit-content !important;
+    }
+
 
     .skill-badge:hover {
       background: rgba(147, 51, 234, 0.25);
@@ -917,80 +948,98 @@ const cssContent = `
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* -------------------------------------------------------------
+        CONTACT SECTION
+        ------------------------------------------------------------- */}
       <section id="contact" className="py-5 bg-secondary-dark">
         <div className="container">
           <h2 className="section-title">Get In Touch</h2>
+
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="card card-glass fade-in">
                 <div className="card-body p-5 text-center">
-                  <h4 className="typography-subheading mb-4">Let's Build Something Amazing Together</h4>
-                  <p className="typography-body mb-4">
+
+                  {/* Tagline */}
+                  <h4 className="typography-subheading mb-4">
+                    Let's Build Something Amazing Together
+                  </h4>
+
+                  <p className="typography-body mb-5">
                     I'm always excited to discuss new opportunities, collaborate on interesting projects,
                     or simply chat about technology and innovation.
                   </p>
 
-                  {/* Contact Icons */}
-                  <div className="row mb-4">
-                    <div className="col-md-4 mb-3">
+                  {/* ---------- CONTACT ICONS ---------- */}
+                  <div className="row mb-5">
+                    <div className="col-md-4 mb-4">
                       <div className="d-flex flex-column align-items-center">
                         <i className="fas fa-envelope contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
                         <h6 className="typography-heading mb-1">Email</h6>
                         <p className="typography-body-light small mb-0">stildusman@gmail.com</p>
                       </div>
                     </div>
-                    <div className="col-md-4 mb-3">
-                      <div className="d-flex flex-column align-items-center">
-                        <a href="https://www.linkedin.com/in/gowtham-off" target="_blank" rel="noopener noreferrer"
-                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                          <i className="fab fa-linkedin contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
-                          <h6 className="typography-heading mb-1">LinkedIn</h6>
-                          <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-off</p>
-                        </a>
-                      </div>
+
+                    <div className="col-md-4 mb-4">
+                      <a
+                        href="https://www.linkedin.com/in/gowtham-off"   // ← change to your custom vanity URL
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="d-flex flex-column align-items-center text-decoration-none"
+                        style={{ color: 'inherit' }}
+                      >
+                        <i className="fab fa-linkedin contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
+                        <h6 className="typography-heading mb-1">LinkedIn</h6>
+                        <p className="typography-body-light small mb-0">linkedin.com/in/gowtham-off</p>
+                      </a>
                     </div>
-                    <div className="col-md-4 mb-3">
-                      <div className="d-flex flex-column align-items-center">
-                        <a href="https://github.com/Gowtham007-M" target="_blank" rel="noopener noreferrer"
-                          style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                          <i className="fab fa-github contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
-                          <h6 className="typography-heading mb-1">GitHub</h6>
-                          <p className="typography-body-light small mb-0">github.com/Gowtham007-M</p>
-                        </a>
-                      </div>
+
+                    <div className="col-md-4 mb-4">
+                      <a
+                        href="https://github.com/Gowtham007-M"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="d-flex flex-column align-items-center text-decoration-none"
+                        style={{ color: 'inherit' }}
+                      >
+                        <i className="fab fa-github contact-icon" style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}></i>
+                        <h6 className="typography-heading mb-1">GitHub</h6>
+                        <p className="typography-body-light small mb-0">github.com/Gowtham007-M</p>
+                      </a>
                     </div>
                   </div>
 
-                  {/* LINKEDIN BADGE – WILL APPEAR */}
-                  <div className="mt-5">
+                  {/* ---------- LINKEDIN BADGE (HTML is already here and will be rendered before the script runs) ---------- */}
+                  <div className="linkedin-badge-container mb-5">
                     <div
                       className="badge-base LI-profile-badge"
                       data-locale="en_US"
                       data-size="large"
                       data-theme="dark"
                       data-type="HORIZONTAL"
-                      data-vanity="gowtham-off"
+                      data-vanity="gowtham-off" 
                       data-version="v1"
                     />
                   </div>
 
-                  {/* Send Email Button */}
-                  <div className="d-flex justify-content-center mt-4">
+                  {/* ---------- SEND EMAIL BUTTON ---------- */}
+                  <div className="d-flex justify-content-center">
                     <a
                       href="mailto:stildusman@gmail.com"
-                      className="btn btn-primary-custom"
+                      className="btn btn-primary-custom px-4 py-2"
                     >
                       <i className="fas fa-envelope me-2"></i>
                       Send Email
                     </a>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="py-4 text-center">
