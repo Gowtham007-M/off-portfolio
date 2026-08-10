@@ -1,16 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Gowtham M - Portfolio" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gowtham M — Machine Learning Engineer</title>
+<meta name="description" content="Gowtham M — Google Cloud Certified ML Engineer. Data & AI, Computer Vision, predictive systems." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
 
-    <title>Gowtham M | Portfolio</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<!-- THREE.JS BACKGROUND -->
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<!-- TRAINING STATUS -->
+<div class="train-pill glass" id="trainLabel" aria-hidden="true">
+  <i></i> network training · <span id="trainPct">0%</span>
+</div>
+
+<!-- AURORA ORBS -->
+<div class="aurora" aria-hidden="true">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+</div>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <span class="pre-logo">GM</span>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <nav class="nav-inner">
+    <a class="brand" href="#home" data-cursor="link">Gowtham<span class="brand-dot">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-cursor="link">About</a>
+      <a href="#skills" data-cursor="link">Skills</a>
+      <a href="#experience" data-cursor="link">Experience</a>
+      <a href="#projects" data-cursor="link">Projects</a>
+      <a href="#education" data-cursor="link">Education</a>
+    </div>
+    <a class="nav-cta" href="#contact" data-cursor="link">Contact</a>
+    <button class="nav-burger" id="navBurger" aria-label="menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav>
+    <a href="#about" data-cursor="link">About</a>
+    <a href="#skills" data-cursor="link">Skills</a>
+    <a href="#experience" data-cursor="link">Experience</a>
+    <a href="#projects" data-cursor="link">Projects</a>
+    <a href="#education" data-cursor="link">Education</a>
+    <a href="#contact" data-cursor="link">Contact</a>
+  </nav>
+  <p class="mobile-menu-foot">gowtham.ml@proton — chennai, india</p>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-kicker" data-hero>Machine Learning Engineer — Data &amp; AI · Computer Vision</p>
+      <h1 class="hero-title" data-hero>
+        Gowtham<span class="hero-space"> </span><span class="accent">M.</span>
+      </h1>
+      <p class="hero-sub" data-hero>Google Cloud certified engineer building intelligent systems that predict, detect, and understand the real world — from predictive maintenance on factory lines to real-time computer vision.</p>
+      <div class="hero-actions" data-hero>
+        <a class="btn btn-primary" href="#projects" data-cursor="link">View projects</a>
+        <a class="btn btn-ghost" href="#contact" data-cursor="link">Get in touch</a>
+      </div>
+      <a class="hero-scroll" href="#about" data-cursor="link">
+        <span>scroll</span>
+        <i></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>python</span><b>·</b><span>google cloud</span><b>·</b><span>tensorflow</span><b>·</b><span>pytorch</span><b>·</b><span>opencv</span><b>·</b><span>bigquery</span><b>·</b><span>computer vision</span><b>·</b><span>neural networks</span><b>·</b><span>predictive analytics</span><b>·</b><span>mcmc · rqa · fft</span><b>·</b>
+      <span>python</span><b>·</b><span>google cloud</span><b>·</b><span>tensorflow</span><b>·</b><span>pytorch</span><b>·</b><span>opencv</span><b>·</b><span>bigquery</span><b>·</b><span>computer vision</span><b>·</b><span>neural networks</span><b>·</b><span>predictive analytics</span><b>·</b><span>mcmc · rqa · fft</span><b>·</b>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>01 — about</p>
+      <h2 class="sec-title" data-reveal>Building intelligence,<br />end<span class="grad"> to end.</span></h2>
+      <div class="about-grid">
+        <div class="glass about-card" data-reveal>
+          <p class="about-lead">Google Cloud Certified <span class="hl">Professional ML Engineer</span> and fourth-year IT student with production experience across model development, data science and AI-driven analytics.</p>
+          <p>At <span class="hl">TVS Next</span> I engineered predictive maintenance pipelines, neural-network inventory optimization and real-time anomaly detection for manufacturing. I've organized <span class="hl">500+</span> hackathon participants and mentored <span class="hl">150+</span> students in ML &amp; AI.</p>
+        </div>
+        <div class="glass about-quote" data-reveal>
+          <p class="quote-mark">“</p>
+          <p class="quote-text">A model is only as good as the problem it ships to production to solve.</p>
+          <p class="quote-src">— design principle</p>
+        </div>
+      </div>
+      <div class="stats stagger">
+        <div class="glass stat" data-reveal>
+          <span class="stat-num" data-count="500">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">hackathon participants</p>
+        </div>
+        <div class="glass stat" data-reveal>
+          <span class="stat-num" data-count="200">0</span><span class="stat-plus">%</span>
+          <p class="stat-label">club membership growth</p>
+        </div>
+        <div class="glass stat" data-reveal>
+          <span class="stat-num" data-count="150">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">students mentored</p>
+        </div>
+        <div class="glass stat" data-reveal>
+          <span class="stat-num" data-count="3">0</span>
+          <p class="stat-label">internships &amp; research</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>02 — skills</p>
+      <h2 class="sec-title" data-reveal>A full <span class="grad">stack,</span><br />for data &amp; AI.</h2>
+      <div class="skills-grid">
+        <div class="glass card" data-reveal>
+          <h3 class="card-title">ML &amp; AI</h3>
+          <div class="bar"><span class="bar-label">neural networks</span><span class="bar-track"><i style="--w:95%"></i></span></div>
+          <div class="bar"><span class="bar-label">predictive analytics</span><span class="bar-track"><i style="--w:92%"></i></span></div>
+          <div class="bar"><span class="bar-label">computer vision</span><span class="bar-track"><i style="--w:90%"></i></span></div>
+          <div class="bar"><span class="bar-label">anomaly detection</span><span class="bar-track"><i style="--w:88%"></i></span></div>
+          <div class="bar"><span class="bar-label">opencv · ocr</span><span class="bar-track"><i style="--w:88%"></i></span></div>
+          <div class="bar"><span class="bar-label">mcmc · rqa · fft</span><span class="bar-track"><i style="--w:85%"></i></span></div>
+          <div class="bar"><span class="bar-label">genetic algorithms</span><span class="bar-track"><i style="--w:80%"></i></span></div>
+        </div>
+        <div class="glass card" data-reveal>
+          <h3 class="card-title">Data Science &amp; Analytics</h3>
+          <div class="bar"><span class="bar-label">statistical modeling</span><span class="bar-track"><i style="--w:90%"></i></span></div>
+          <div class="bar"><span class="bar-label">big data analytics</span><span class="bar-track"><i style="--w:86%"></i></span></div>
+          <div class="bar"><span class="bar-label">real-time pipelines</span><span class="bar-track"><i style="--w:86%"></i></span></div>
+          <div class="bar"><span class="bar-label">data engineering</span><span class="bar-track"><i style="--w:84%"></i></span></div>
+          <div class="bar"><span class="bar-label">jupyter notebook</span><span class="bar-track"><i style="--w:92%"></i></span></div>
+        </div>
+        <div class="glass card" data-reveal>
+          <h3 class="card-title">Cloud &amp; Databases</h3>
+          <div class="bar"><span class="bar-label">google cloud platform</span><span class="bar-track"><i style="--w:88%"></i></span></div>
+          <div class="bar"><span class="bar-label">mysql</span><span class="bar-track"><i style="--w:82%"></i></span></div>
+          <div class="bar"><span class="bar-label">postgresql</span><span class="bar-track"><i style="--w:80%"></i></span></div>
+          <div class="bar"><span class="bar-label">git</span><span class="bar-track"><i style="--w:90%"></i></span></div>
+        </div>
+        <div class="glass card" data-reveal>
+          <h3 class="card-title">Programming &amp; Web</h3>
+          <div class="bar"><span class="bar-label">python</span><span class="bar-track"><i style="--w:93%"></i></span></div>
+          <div class="bar"><span class="bar-label">c / c++</span><span class="bar-track"><i style="--w:80%"></i></span></div>
+          <div class="bar"><span class="bar-label">html / css</span><span class="bar-track"><i style="--w:84%"></i></span></div>
+          <div class="bar"><span class="bar-label">javascript</span><span class="bar-track"><i style="--w:75%"></i></span></div>
+          <div class="bar"><span class="bar-label">react</span><span class="bar-track"><i style="--w:72%"></i></span></div>
+          <div class="bar"><span class="bar-label">xampp stack</span><span class="bar-track"><i style="--w:70%"></i></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>03 — experience</p>
+      <h2 class="sec-title" data-reveal>Where I've <span class="grad">shipped.</span></h2>
+      <div class="timeline">
+        <article class="glass tl-item" data-reveal>
+          <span class="tl-date">Mar 2026 — Jul 2026</span>
+          <h3 class="tl-role">Computer Vision &amp; Deep Learning <span class="tag">intern</span></h3>
+          <p class="tl-co">e-con Systems — Chennai</p>
+          <ul class="tl-points">
+            <li>Built CV solutions with CNNs and deep learning for real-world image analysis.</li>
+            <li>Designed ML pipelines for object detection, image processing and visual recognition.</li>
+            <li>Researched CV techniques to improve model performance and inference reliability.</li>
+          </ul>
+        </article>
+        <article class="glass tl-item" data-reveal>
+          <span class="tl-date">Apr 2025 — Nov 2025</span>
+          <h3 class="tl-role">Data &amp; AI <span class="tag">intern</span></h3>
+          <p class="tl-co">TVS Next — Chennai</p>
+          <ul class="tl-points">
+            <li>Engineered predictive maintenance with MCMC, RQA &amp; FFT statistical modeling.</li>
+            <li>Built real-time vibration analysis and anomaly detection pipelines.</li>
+            <li>Designed neural-network inventory optimization models.</li>
+            <li>Optimized manufacturing throughput with advanced ML algorithms.</li>
+          </ul>
+        </article>
+        <article class="glass tl-item" data-reveal>
+          <span class="tl-date">2024 — present</span>
+          <h3 class="tl-role">Student Research, R&amp;D <span class="tag">intern</span></h3>
+          <p class="tl-co">SRM Group of Institutions — Ramapuram &amp; Trichy</p>
+          <ul class="tl-points">
+            <li>Contribute to applied AI and emerging tech research with faculty.</li>
+            <li>Design and validate cutting-edge AI/ML prototypes.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>04 — projects</p>
+      <h2 class="sec-title" data-reveal>Selected <span class="grad">work.</span></h2>
+      <div class="projects-grid">
+        <a class="glass project" href="https://github.com/Gowtham007-M" target="_blank" rel="noopener" data-reveal data-cursor="link">
+          <span class="p-index">P/01</span>
+          <h3 class="p-title">Automated Vehicle Number Plate Recognition</h3>
+          <p class="p-desc">Real-time vehicle identification using OpenCV and OCR — license plate detection and data logging.</p>
+          <div class="p-stack"><span>opencv</span><span>ocr</span><span>python</span></div>
+          <span class="p-open">open_github <i>→</i></span>
+        </a>
+        <a class="glass project" href="https://github.com/Gowtham007-M" target="_blank" rel="noopener" data-reveal data-cursor="link">
+          <span class="p-index">P/02</span>
+          <h3 class="p-title">AI Face Tracking Camera for Live Video</h3>
+          <p class="p-desc">Real-time ML face tracking that dynamically frames participants during live conferencing.</p>
+          <div class="p-stack"><span>deep learning</span><span>realtime</span><span>python</span></div>
+          <span class="p-open">open_github <i>→</i></span>
+        </a>
+        <a class="glass project" href="https://github.com/Gowtham007-M" target="_blank" rel="noopener" data-reveal data-cursor="link">
+          <span class="p-index">P/03</span>
+          <h3 class="p-title">Smart Home Automation Platform</h3>
+          <p class="p-desc">Sensor-integrated home automation with mobile control — proof-of-concept for IoT–ML research.</p>
+          <div class="p-stack"><span>iot</span><span>sensors</span><span>mobile</span></div>
+          <span class="p-open">open_github <i>→</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>05 — education</p>
+      <h2 class="sec-title" data-reveal>Learning, <span class="grad">continuously.</span></h2>
+      <div class="edu">
+        <div class="glass edu-row" data-reveal>
+          <span class="edu-type">degree</span>
+          <div class="edu-main">
+            <h3>B.Tech — Information Technology</h3>
+            <p>Easwari Engineering College, Chennai · 2023 — 2027</p>
+          </div>
+        </div>
+        <div class="glass edu-row" data-reveal>
+          <span class="edu-type cert">cert</span>
+          <div class="edu-main">
+            <h3>Professional Machine Learning Engineer</h3>
+            <p>Google Cloud · valid mar 2026 — mar 2028</p>
+          </div>
+        </div>
+        <div class="glass edu-row" data-reveal>
+          <span class="edu-type cert">cert</span>
+          <div class="edu-main">
+            <h3>Data Science &amp; Big Data Analytics</h3>
+            <p>Dr. Ganesh Academy · 6-month applied program · Jan 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="sec-label" data-reveal>06 — leadership</p>
+      <h2 class="sec-title" data-reveal>Leading <span class="grad">communities.</span></h2>
+      <div class="glass leadership" data-reveal>
+        <div class="lead-head">
+          <div>
+            <h3>President — TechSaavy Tech Club</h3>
+            <p>Easwari Engineering College · 2023 — present</p>
+          </div>
+        </div>
+        <ul class="lead-list">
+          <li>Led planning of multiple hackathons, scaling participation to <span class="hl">500+</span> attendees.</li>
+          <li>Grew club membership by <span class="hl">200%</span> while mentoring <span class="hl">150+</span> students in ML &amp; AI.</li>
+          <li>Organized technical workshops on AI, data science and emerging tech for the community.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>07 — contact</p>
+      <h2 class="sec-title contact-title" data-reveal>Let's build<br /><span class="grad">something intelligent.</span></h2>
+      <p class="contact-sub" data-reveal>Open to machine learning engineering, data science and computer vision roles.</p>
+      <div class="contact-actions stagger">
+        <a class="btn btn-primary" href="mailto:40eecgowtham@gmail.com" data-reveal data-cursor="link">Email me</a>
+        <a class="glass contact-pill" href="https://www.linkedin.com/in/gowtham-off" target="_blank" rel="noopener" data-reveal data-cursor="link">LinkedIn</a>
+        <a class="glass contact-pill" href="https://github.com/Gowtham007-M" target="_blank" rel="noopener" data-reveal data-cursor="link">GitHub</a>
+        <a class="glass contact-pill" href="https://off-portfolio-lemon.vercel.app" target="_blank" rel="noopener" data-reveal data-cursor="link">Portfolio</a>
+      </div>
+      <a class="contact-email" href="mailto:40eecgowtham@gmail.com" data-reveal data-cursor="link">40eecgowtham@gmail.com</a>
+      <p class="contact-foot" data-reveal>+91 90037 80307 · Chennai, India</p>
+    </div>
+  </section>
+
+  <!-- ============ FINALE — THE STORY ============ -->
+  <section class="section finale" id="story">
+    <div class="wrap">
+      <p class="sec-label" data-reveal>08 — the model</p>
+      <h2 class="sec-title" data-reveal>This is<br /><span class="grad">my story.</span></h2>
+      <p class="finale-sub" data-reveal>Every skill you scrolled past is a layer in the network I trained along the way. Pull back the scroll — the finished model is who I am today.</p>
+    </div>
+
+    <!-- layer labels floating over the 3D network -->
+    <div class="net-map" aria-hidden="true">
+      <div class="nm-label" data-reveal style="left:0%"><i></i><span>the curiosity</span></div>
+      <div class="nm-label" data-reveal style="left:16.6%"><i></i><span>the basics</span></div>
+      <div class="nm-label" data-reveal style="left:33.3%"><i></i><span>machine learning</span></div>
+      <div class="nm-label" data-reveal style="left:50%"><i></i><span>data science</span></div>
+      <div class="nm-label" data-reveal style="left:66.6%"><i></i><span>computer vision</span></div>
+      <div class="nm-label" data-reveal style="left:83.3%"><i></i><span>cloud &amp; scale</span></div>
+      <div class="nm-label nm-out" data-reveal style="left:100%"><i></i><span>who I am now</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="glass story-panel" data-reveal>
+        <div class="story-node in">
+          <span class="story-tag">input</span>
+          <p>Curiosity, mathematics and a fourth-year IT degree at Easwari Engineering College — the raw data that started everything.</p>
+        </div>
+        <div class="story-flow" aria-hidden="true">→</div>
+        <div class="story-node hidden">
+          <span class="story-tag">hidden layers</span>
+          <p>Internships at TVS Next and e-con Systems, 500+ hackathon participants, 150+ students mentored — every challenge a weight I learned from.</p>
+        </div>
+        <div class="story-flow" aria-hidden="true">→</div>
+        <div class="story-node out">
+          <span class="story-tag">output</span>
+          <p><span class="hl">Gowtham M.</span> — machine learning engineer, builder and mentor. The model you see now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">© <span id="year">2026</span> Gowtham M</span>
+    <span class="footer-done"><i></i> model trained — ready to deploy</span>
+    <span class="footer-links">
+      <a href="https://www.linkedin.com/in/gowtham-off" target="_blank" rel="noopener" data-cursor="link">linkedin</a> ·
+      <a href="https://github.com/Gowtham007-M" target="_blank" rel="noopener" data-cursor="link">github</a> ·
+      <a href="mailto:40eecgowtham@gmail.com" data-cursor="link">email</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>
